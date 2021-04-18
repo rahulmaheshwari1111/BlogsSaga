@@ -1,12 +1,16 @@
 import React from 'react'
 import ProjectSummary from './ProjectSummary'
 
-function ProjectList() {
+function ProjectList(props) {
+    console.log("asda", props)
     return (
         <div className = "project-list section">
-         <ProjectSummary/>
-         <ProjectSummary/>
-         <ProjectSummary/>
+        { props.projects && props.projects.map(project=>{
+            return (
+                <ProjectSummary project = {project} key = {project.id}/>
+            )
+        })}
+        
             </div>
 
 
